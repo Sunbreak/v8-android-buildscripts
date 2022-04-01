@@ -36,11 +36,11 @@ jobs:
           command: |
             scripts/patch.sh
 
-      - run:
-          name: Build V8
-          command: |
-            scripts/build.sh
-            scripts/archive.sh
+      # - run:
+      #     name: Build V8
+      #     command: |
+      #       scripts/build.sh
+      #       scripts/archive.sh
 
       - run:
           name: Build V8 No Intl
