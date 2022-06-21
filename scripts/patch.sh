@@ -7,6 +7,10 @@ source $(dirname $0)/env.sh
 V8_PATCHSET=(
   # V8 shared library support
   "v8_shared_library.patch"
+
+  # Fix unnecessary data_deps with AddressSanitizer
+  # https://chromium-review.googlesource.com/c/chromium/src/+/1827248
+  "fix_asan.patch"
 )
 
 ######################################################################################

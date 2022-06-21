@@ -12,6 +12,7 @@ GN_ARGS_BASE='
   v8_use_external_startup_data = false
   icu_use_data_file=false
   v8_enable_lite_mode=true
+  is_asan=true
 '
 
 if [[ ${NO_INTL} -eq "1" ]]; then
@@ -87,4 +88,11 @@ function build_arch()
 build_arch "arm"
 build_arch "x86"
 build_arch "arm64"
-build_arch "x64"
+######################################################################################
+# FIXME
+# ninja: Entering directory `out.v8.x64'
+# [1/1] SOLINK_MODULE ./libv8android.so
+# FAILED: libv8android.so lib.unstripped/libv8android.so 
+# ld.lld: error: cannot open v8-android-buildscripts/v8/third_party/llvm-build/Release+Asserts/lib/clang/10.0.0/lib/linux/libclang_rt.asan-x86_64-android.so: No such file or directory
+######################################################################################
+# build_arch "x64" 

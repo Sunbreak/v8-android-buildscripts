@@ -1,0 +1,17 @@
+diff --git a/build/android/BUILD.gn b/build/android/BUILD.gn
+index 67fa0f08e..a2e59dcdc 100644
+--- a/build/android/BUILD.gn
++++ b/build/android/BUILD.gn
+@@ -92,9 +92,9 @@ python_library("test_runner_py") {
+   if (build_with_chromium) {
+     data_deps +=
+         [ "//third_party/android_platform/development/scripts:stack_py" ]
+-  }
+-  if (is_asan) {
+-    data_deps += [ "//tools/android/asan/third_party:asan_device_setup" ]
++    if (is_asan) {
++      data_deps += [ "//tools/android/asan/third_party:asan_device_setup" ]
++    }
+   }
+ 
+   # Proguard is needed only when using apks (rather than native executables).
